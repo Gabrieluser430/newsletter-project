@@ -1,8 +1,19 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import mobile from "../../public/illustration-sign-up-mobile.svg"
 import success from '../../public/icon-success.svg'
 
+const handleClick = (event) => {
+  event.preventDefault()
+  
+}
+
 export default function Home() {
+
+  const router = useRouter()
+
   return (
     <div className="flex items-center justify-center p-14">
     	<main className="h-screen w-screen bg-slate-200 rounded-2xl">  
@@ -31,9 +42,11 @@ export default function Home() {
             <p>And much more! You are going to be updated</p>
           </div>
           <form className="pt-12 flex flex-col">
-            <label className="text-sm">Email address</label>
+            <label className="text-sm font-semibold">Email address</label>
             <input className="px-6 py-4 rounded-xl border-black border-2 mt-4" placeholder="email@company.com"/>
-            <button className="bg-blue-900 py-4 text-white rounded-lg mt-8 cursor-pointer">Subscribe to monthly newsletter</button>
+            <button className="bg-indigo-950 py-4 text-white rounded-lg mt-8 cursor-pointer font-medium" type="button" onClick={() => router.push('/about')}>
+              Click in here motherfucker
+            </button>
           </form>
         </div>
     	</main>
