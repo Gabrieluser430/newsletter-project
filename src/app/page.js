@@ -45,7 +45,7 @@ export default function Home() {
             <label className="text-sm font-semibold">Email address</label>
             <input className="px-6 py-4 rounded-xl border-black border-2 mt-4" placeholder="email@company.com"/>
             <button className="bg-indigo-950 py-4 text-white rounded-lg mt-8 cursor-pointer font-medium" type="button" onClick={() => router.push('/about')}>
-              Click in here motherfucker
+              Subscribe to monthly newsletter
             </button>
           </form>
         </div>
