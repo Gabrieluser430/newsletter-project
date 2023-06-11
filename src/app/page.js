@@ -1,28 +1,46 @@
 'use client'
 
+import {useEffect, useState} from "react"
+import success from '../../public/icon-success.svg'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import mobile from "../../public/illustration-sign-up-mobile.svg"
-import success from '../../public/icon-success.svg'
-
-const handleClick = (event) => {
-  event.preventDefault()
-  
-}
+import desktop from "../../public/illustration-sign-up-desktop.svg"
 
 export default function Home() {
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [userEmail, setUserEmail] = useState('')
+    
+  useEffect(() => {
+      const handleResize = () => {
+          setWindowWidth(window.innerWidth)
+          }
+  
+      window.addEventListener('resize', handleResize)
+  
+      return () => {
+          window.removeEventListener('resize', handleResize)
+          }
+      }, []
+  )
+
+  const handleSubmit = (event) => {
+      event.preventDefault()   
+      router.push('/subscribed')
+  }
 
   const router = useRouter()
 
   return (
-    <div className="flex items-center justify-center p-14">
-    	<main className="h-screen w-screen bg-slate-200 rounded-2xl">  
+    <div className="flex items-center justify-center">
+    	<main className=" bg-white rounded-2xl md:flex md:flex-row-reverse md:p-6">  
         <div>
-          <Image src={mobile} width={'100%'} height={'100%'} className="w-full rounded-t-xl"/>
+          <Image src={windowWidth > 768 ? desktop : mobile}  objectFit="contain" className="w-full rounded-t-xl h-full" />
         </div>
-        <div className="px-6">
-          <h1 className="pt-12 pb-8 text-4xl font-bold">Stay updated!</h1>
-          <p className="pb-6">Join 60,000+ product managers receiving monthly updates on:</p>
+        <div className="px-6 lg:pl-8 lg:pr-14">
+          <h1 className="pt-12 pb-8 text-4xl font-bold lg:text-6xl">Stay updated!</h1>
+          <p className="pb-6 lg:w-96">Join 60,000+ product managers receiving monthly updates on:</p>
           <div className="flex flex-row items-center">
             <div>
               <Image src={success} className="w-5 mr-6"/>
@@ -33,7 +51,7 @@ export default function Home() {
             <div>
               <Image src={success} className="w-5 mr-6"/>
             </div>
-            <p>Measuring to ensure updates are a success</p>
+            <p className="py-3">Measuring to ensure updates are a success</p>
           </div>
           <div className="flex flex-row items-center">
             <div>
@@ -41,10 +59,19 @@ export default function Home() {
             </div>
             <p>And much more! You are going to be updated</p>
           </div>
-          <form className="pt-12 flex flex-col">
+          <form className="pt-12 flex flex-col" onSubmit={handleSubmit}>
             <label className="text-sm font-semibold">Email address</label>
-            <input className="px-6 py-4 rounded-xl border-black border-2 mt-4" placeholder="email@company.com"/>
-            <button className="bg-indigo-950 py-4 text-white rounded-lg mt-8 cursor-pointer font-medium" type="button" onClick={() => router.push('/about')}>
+            <input 
+              className="px-6 py-4 rounded-xl border-black border-2 mt-4" 
+              placeholder="email@company.com" 
+              onChange={(event) => {
+                setUserEmail(event.target.value)
+              }}
+              value={userEmail}
+              type="email"
+              required
+            />
+            <button className="bg-indigo-950 py-4 text-white rounded-lg mt-8 cursor-pointer font-medium" type="submit">
               Subscribe to monthly newsletter
             </button>
           </form>
