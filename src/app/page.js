@@ -1,19 +1,18 @@
 'use client'
 
-import {useEffect, useState, useContext} from "react"
+import {useEffect, useState} from "react"
 import success from '../../public/icon-success.svg'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import mobile from "../../public/illustration-sign-up-mobile.svg"
 import desktop from "../../public/illustration-sign-up-desktop.svg"
-import { EmailContext } from './context/EmailContext'
 
 export default function Home() {
 
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 769
   )
-  const [userEmail, setUserEmail] = useContext(EmailContext)
+  const [userEmail, setUserEmail] = useState("")
     
   useEffect(() => {
       const handleResize = () => {
