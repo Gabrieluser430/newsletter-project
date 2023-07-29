@@ -1,34 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Newsletter Sign Up - Frontend Mentor
+A newsletter form challenge provided by the Frontend Mentor.
 
-## Getting Started
+## Table of Contents
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
 
-First, run the development server:
+## Overview
+### Screenshot
+### Desktop 1/2
+![desktop](https://github.com/Gabrieluser430/newsletter-project/assets/107634249/8b42ee33-ab38-4e7f-9afb-fa1e97f8fd5e)
+### Desktop 2/2
+![newsletterDesktop2](https://github.com/Gabrieluser430/newsletter-project/assets/107634249/b008e804-7511-4508-9330-f097f825a185)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Mobile 1/2
+![newsletterMobile1](https://github.com/Gabrieluser430/newsletter-project/assets/107634249/719e03b1-9d7a-44ef-9fa7-983a7be49c81)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Mobile 2/2
+![newsletterMobile2](https://github.com/Gabrieluser430/newsletter-project/assets/107634249/9462fe73-9319-4e2c-aace-6650da5779ec)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Links
+- Live Site URL: [Live site](https://vercel.com/gabrieluser430/newsletter-frontform)
 
-## Deploy on Vercel
+## My process
+A project with a beautiful design that was achieved by using TailwindCSS along with the mobile-first approach. Form validation using React-hook-form.
+### Built with
+- Typescript
+- Next.js
+- TailwindCSS
+- React-hook-form
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Author
+- Twitter: [@gabrieluser431](https://twitter.com/gabrieluser431)
