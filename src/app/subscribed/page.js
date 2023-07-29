@@ -3,9 +3,16 @@
 import Image from "next/image"
 import success from "../../../public/icon-success.svg"
 import { useRouter } from "next/navigation"
+import { useState, useEffect } from "react";
 
-export default function Subscribed() {
+export default function Subscribed( { email } ) {
     const router = useRouter()
+
+    const [subscribedEmail, setSubscribedEmail] = useState(email);
+
+    useEffect(() => {
+        setSubscribedEmail(email);
+    }, [email])
 
     return (
         <div className="flex flex-row items-center justify-center h-screen">
@@ -14,7 +21,7 @@ export default function Subscribed() {
                     <Image src={success} alt="Success icon"/>
                 </div>
                 <h1 className="font-bold text-3xl mt-8 md:text-4xl lg:text-5xl lg:mt-6">Thanks for subscribing!</h1>
-                <p className="font-medium mt-4 text-sm">A confirmation message has been sent to your email. Please open it and click the button inside to confirm your subscription.</p>
+                <p className="font-medium mt-4 text-sm">A confirmation message has been sent to { subscribedEmail }. Please open it and click the button inside to confirm your subscription.</p>
                 <button className="mt-7 bg-buttonColor px-20 py-3 rounded-lg text-white font-medium text-sm" onClick={() => router.push("/")}>Dismiss message</button>
             </div>
         </div>
