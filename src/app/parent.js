@@ -4,7 +4,7 @@ import Newsletter from "./components/newsletter"
 import Subscribed from "./subscribed/page"
 import React, { useState } from "react";
 
-export default function parentComponent() {
+export default function ParentComponent() {
     const [email, setEmail] = useState("");
     console.log(email)
 
