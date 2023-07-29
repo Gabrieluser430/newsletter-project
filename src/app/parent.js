@@ -9,10 +9,10 @@ export default function ParentComponent() {
     console.log(email)
 
     return (
-        
-        <Newsletter setEmail={setEmail}>
-            <Subscribed email={email}/>
-        </Newsletter>
+        <>
+            <Newsletter setEmail={setEmail}/>
+        </>
     )
 }
+
 

@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form"
 import  { useRouter } from "next/navigation"
 
 export default function Home( { setEmail } ) {
-  const {register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const router = useRouter();
 
   const [windowWidth, setWindowWidth] = useState(
@@ -28,10 +28,11 @@ export default function Home( { setEmail } ) {
           }
       }, []
   )
-  
+
+
   function onSubmit(data) {
-    router.push("/subscribed")
     setEmail(data.emailInput)
+    router.push(`/subscribed?email=${data.emailInput}`)
   }
 
 
