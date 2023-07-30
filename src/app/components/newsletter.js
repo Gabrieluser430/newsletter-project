@@ -8,7 +8,7 @@ import desktop from "../../../public/illustration-sign-up-desktop.svg"
 import { useForm } from "react-hook-form"
 import  { useRouter } from "next/navigation"
 
-export default function Home( { setEmail } ) {
+export default function Home() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const router = useRouter();
 
@@ -37,8 +37,9 @@ export default function Home( { setEmail } ) {
 
 
   return (
-      <div className="flex items-center justify-center p-16 overflow-x-hidden">
-        <main className=" bg-white rounded-2xl md:flex md:flex-row-reverse md:p-6 pb-6 h-full">  
+      <div className="flex flex-col items-center justify-center p-16 overflow-x-hidden ">
+        
+        <main className=" bg-white rounded-2xl md:flex md:flex-row-reverse md:p-6 pb-6 lg:h-full">  
           <div>
             <Image src={windowWidth > 768 ? desktop : mobile} className="w-full rounded-t-xl h-full" alt="An orange image with a statistics icon and a monitor."/>
           </div>

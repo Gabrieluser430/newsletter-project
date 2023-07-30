@@ -1,10 +1,10 @@
 
-import Parent from "./parent"
+import Newsletter from "./components/newsletter"
 
 export default function Home() {
   return (
       <div>
-        -<Parent />
+          <Newsletter />
       </div>
   )
 }
